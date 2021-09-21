@@ -1,3 +1,40 @@
+*{
+  margin: 0;
+  padding: 0;
+  font-family: 'Gloria Hallelujah', cursive;
+  gap: 1em;
+}
+
+.in{
+  background-color: transparent;
+  color: white;
+  border: none;
+  border-bottom: 2px solid whitesmoke;
+  border-radius: 0;
+}
+
+.alert{
+  border-radius: 50px;
+  align-items: center;
+  justify-content: center;
+  vertical-align: center;
+  width: 55%;
+}
+
+.input{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  vertical-align: center;
+  width: 45%;
+  flex-direction: row;
+}
+
+.btn{
+  width: 150px;
+}
+
 .App {
   text-align: center;
 }

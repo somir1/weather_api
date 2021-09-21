@@ -1,19 +1,20 @@
-import React from "react";
+import React, {useState} from "react";
 import './App.css';
 import axios from 'axios'
-import Weather from "./components/weather";
-import Form from "./components/form";
+import Weather from './components/weather';
 import 'weather-icons/css/weather-icons.css'
-
 import { Component } from 'react';
 
 const API_key = "323d079b0cb75f916d34c0127aa14f0a"
+
+const [weatherI]
 
 class App extends React.Component{
   constructor(){
     super();
     this.state = {
       city: undefined,
+      country: undefined,
       icon: undefined,
       main: undefined,
       fahrenheit: undefined,
@@ -22,7 +23,8 @@ class App extends React.Component{
       description: "",
       error: false
     };
-  
+    this.getWeather();
+
     this.weatherIcon = {
       Thunderstorm: "wi-thunderstorm",
       Drizzle: "wi-sleet",
@@ -69,10 +71,7 @@ class App extends React.Component{
   }
 
 getWeather = async e => {
-  e.preventDefault();
-  const city = e.target.elements.city.value;
-if (city){
-  axios.get(`http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${API_key}`)
+  axios.get(`http://api.openweathermap.org/data/2.5/weather?q=miami&appid=${API_key}`)
       .then(res => {
         console.log(res.data)
         console.log(res.data.sys)
@@ -90,19 +89,14 @@ if (city){
         console.log( res.data.weather[0].id)
     })
     .catch(err => console.log("we got problem", err))
-  } 
-  else {
-    this.setState({error: true})
-  }
 }
 
   render(){
     return ( 
-      <div className="App m-5">
-        <h2>Please input a city to get the weather</h2>
-      <Form loadweather={this.getWeather} error={this.state.error}/>
+      <div className="App">
       <Weather 
       city = {this.state.city} 
+      country = {this.state.country}
       temp_fahrenheit = {this.state.fahrenheit}
       max = {this.state.max}
       min = {this.state.min}
