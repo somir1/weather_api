@@ -10,7 +10,7 @@
   color: white;
   border: none;
   border-bottom: 2px solid whitesmoke;
-  border-radius: 0;
+  border-radius: 15px;
 }
 
 .alert{
@@ -18,7 +18,7 @@
   align-items: center;
   justify-content: center;
   vertical-align: center;
-  width: 55%;
+  /* width: 55%; */
 }
 
 .input{
@@ -27,12 +27,16 @@
   justify-content: center;
   align-items: center;
   vertical-align: center;
-  width: 45%;
+  /* width: 45%; */
   flex-direction: row;
 }
 
-.btn{
-  width: 150px;
+.butt{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-width: 25%;
+  height: 50px;
 }
 
 .App {

@@ -5,7 +5,7 @@ const Form = props => {
     <div className="container h-150">
       <form onSubmit={props.loadweather} className = "form-group">
         <div>{props.error ? error() : ""}</div>
-        <div className=" container input">
+        <div className=" container input ">
           <div className="container input">
             <input
               type="text"
@@ -14,7 +14,7 @@ const Form = props => {
               name="city"
             />
           </div>
-            <button className="btn btn-warning">Get Weather</button>
+            <button className="btn btn-warning butt">Get Weather</button>
         </div>
       </form>
     </div>
